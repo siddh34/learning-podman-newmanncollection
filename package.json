@@ -1,9 +1,12 @@
 {
 	"dependencies": {
 		"express": "^4.18.2",
+		"fs": "^0.0.1-security",
+		"newman": "^6.0.0",
 		"newman-collection": "^2.0.6"
 	},
 	"scripts": {
-		"start": "node app.js"
+		"start": "node app.js",
+		"test": "cd tests && node test.js"
 	}
 }

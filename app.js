@@ -17,10 +17,14 @@ app.get('/', (req, res) => {
     }
 });
 
-app.get('/movies/:id', (req, res) => {
-    const id = req.params.id;
-    const movie = movies[id];
-    res.json(movie);
+app.get("/movies/:id", (req, res) => {
+	const id = req.params.id;
+	const movie = movies.find((movie) => movie.id == id);
+	if (movie) {
+		res.json(movie);
+	} else {
+		res.status(404).send("Movie not found");
+	}
 });
 
 app.get('/movies', (req, res) => {
